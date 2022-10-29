@@ -13,9 +13,7 @@
     
 ###### Step 4: Check all available databases installed
     show databases;
-
-###### Step 4: Copy and Paste the next line of code
-    eval $(/opt/homebrew/bin/brew shellenv)
+   
 
 ## Creating a new user in the database
 ###### Step 1: Change username and password to what you want
@@ -44,4 +42,18 @@
 ###### Step 2: Check to see if databases were created
     show databases;
 
+## Getting Connection Refused while trying to connect to VM instance
 
+###### Step 1: Open Terminal in VM instance and open .conf file for mysql
+    sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+###### Step 2: Look for the line bind-address and replace ip with:
+    0.0.0.0
+
+###### Step 3: Save and Exit the file
+    
+    
+###### Step 4: Restart mysql from linux terminal
+    /etc/init.d/mysql restart
+
+   
